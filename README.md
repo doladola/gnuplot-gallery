@@ -275,12 +275,14 @@ gnuplot-gallery/
 
 图库数据由**两条来源**汇聚，产出 `site/data/gallery.json` + `site/data/images/`：
 
-```
-官网画廊 gnuplot.info/demo ──fetch.py──┐
-                                        ├──▶ gallery.json + images ──▶ 静态站
-源码包 demo/ + 绿色版 exe ──generate.py─┐
-                                      ├─incorporate.py─┘
-                                      （本地出图 → 并入）
+```mermaid
+flowchart LR
+    A[官网画廊<br/>gnuplot.info/demo] --> B[fetch.py<br/>采集已渲染图]
+    C[源码包 demo/ + 绿色版 exe] --> D[generate.py<br/>本地出图]
+    D --> E[incorporate.py<br/>并入数据]
+    B --> F[(gallery.json<br/>+ images)]
+    E --> F
+    F --> G[静态站 site/]
 ```
 
 | 来源 | 模块 | 产出 |
