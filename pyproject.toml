@@ -1,0 +1,20 @@
+[project]
+name = "gnuplot-gallery"
+version = "0.1.0"
+description = "gnuplot 官方演示的可视化图库：采集、生成、展示与部署"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31",
+    "beautifulsoup4>=4.12",
+]
+
+[project.scripts]
+gp = "gnuplot_gallery.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gnuplot_gallery"]

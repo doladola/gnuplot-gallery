@@ -164,8 +164,8 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
-# mkdocs documentation
-/site
+# gnuplot-gallery 数据产物（由 fetch/generate 脚本可再生，不进 git）
+/site/data/
 
 # mypy
 .mypy_cache/
@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# gnuplot-gallery 工具链（gnuplot 绿色版 + 源码包，由 gp init 下载，不进 git）
+/tools/
